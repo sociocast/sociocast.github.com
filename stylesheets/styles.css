@@ -70,6 +70,12 @@ h3 {
   font-size:19px;
 }
 
+h3 a, h3 a:hover, h3 a:visited {
+  color:#393939;
+  font-size:19px;
+  text-decoration:none;
+}
+
 
 h4 {
   color:#393939;
