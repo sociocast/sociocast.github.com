@@ -60,9 +60,20 @@ The current <code>[API_VERSION]</code> is <code>1.0</code>.
 
 </p>
 
-<h4>API Key and Signature</h4>
+<h4>Current Timestamp, API Key and Signature</h4>
 <p>
-The Sociocast REST API requires that calls to the service be signed (i.e. be sent a signature as part of the request query string). The signature requires the current <code>timestamp</code>, your <code>apikey</code>, and your <code>secret</code>. The value of the <code>apikey</code> is an alphanumeric string assigned to you when you created your Sociocast account. Additionally you were also given an <code>secret</code>, which is a secure alphanumeric string and will be used to calculate the signature.
+For security reasons, the Sociocast REST API requires that calls to the service be signed (i.e. be sent a signature as part of the request query string). The signature requires the current <code>timestamp</code>, your <code>apikey</code>, and your <code>secret</code>. The value of the <code>apikey</code> is an alphanumeric string assigned to you when you created your Sociocast account. Additionally you were also given an <code>secret</code>, which is a secure alphanumeric string and will be used to calculate the signature.
+</p>
+
+<h4>Signing API Requests</h4>
+<p>
+Each API request must be attach a valid signature parameter, the <code>sig</code> parameter, in the query string of the request. The <code>sig</code> value is calculated by generating a <code>SHA256 Digest</code> made up of:
+<ul>
+	<li>The apikey</li>
+	<li>The secret</li>
+	<li>The current <code>timestamp</code>, reflecting the number of seconds since Unix Epoch Time (i.e. <code>January 1 1970 00:00:00 GMT</code>), at which the request is made</li>
+</ul>
+
 </p>
 
 <h3>Overview of REST API Methods</h3>
