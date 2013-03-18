@@ -40,12 +40,12 @@ body {
   padding:50px;
   font:14px/1.5 "ProximaNovaRgRegular", Lato, Helvetica, Arial, sans-serif;
   color:#777;
-  font-weight:300;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color:#222;
   margin:0 0 20px;
+  font:16px "ProximaNovaLtSemibold", Lato, Helvetica, Arial, sans-serif;
 }
 
 p, ul, ol, table, pre, dl {
@@ -70,7 +70,7 @@ h3, h4, h5, h6 {
 
 a {
   color:#00a5e3;
-  font-weight:400;
+  /*font-weight:400;*/
   text-decoration:none;
 }
 
