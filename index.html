@@ -49,17 +49,20 @@
 To get access to the Sociocast REST API, you will need get a Sociocast account. To do so, please visit the Pricing on sociocast.com. To use the API you will need (a) your <code>clid</code> (client ID), your <code>apikey</code> (API key), and (c) your <code>secret</code> (API secret). These were provided to you when you signed up for Sociocast. They are also available via the <a href="https://console.sociocast.com" target="_blank">Sociocast Console</a>. 
 
 To access the API in Sanbox, use the following URL:
-<br/>
 <pre><code>http://api-sandbox.sociocast.com/[API_VERSION]/
 </code></pre>
 
 Once you are ready to use the API in a live environment, use the following URL:
-<br/>
 <pre><code>http://api.sociocast.com/[API_VERSION]/
 </code></pre>
 
 The current <code>[API_VERSION]</code> is <code>1.0</code>. 
 
+</p>
+
+<h4>API Key and Signature</h4>
+<p>
+The Sociocast REST API requires that calls to the service be signed (i.e. be sent a signature as part of the request query string). The signature requires the current <code>timestamp</code>, your <code>apikey</code>, and your <code>secret</code>. The value of the <code>apikey</code> is an alphanumeric string assigned to you when you created your Sociocast account. Additionally you were also given an <code>secret</code>, which is a secure alphanumeric string and will be used to calculate the signature.
 </p>
 
 <h3>Overview of REST API Methods</h3>
