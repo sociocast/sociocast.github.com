@@ -70,7 +70,7 @@ For security reasons, the Sociocast REST API requires that calls to the service 
 Each API request must be attach a valid signature parameter, the <code>sig</code> parameter, in the query string of the request. The <code>sig</code> value is calculated by generating a <code>SHA256 Digest</code> made up of:
 <ul>
 	<li>The <code>apikey</code></li>
-	<li>The <code>secret<code></li>
+	<li>The <code>secret</code></li>
 	<li>The current <code>timestamp</code>, reflecting the number of seconds since Unix Epoch Time (i.e. <code>January 1 1970 00:00:00 GMT</code>), at which the request is made</li>
 </ul>
 
