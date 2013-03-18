@@ -103,6 +103,8 @@ code, pre {
   font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
   color:#333;
   font-size:12px;
+  margin-top:15px;
+  margin-bottom:15px;
 }
 
 h4 code, h4 pre {
