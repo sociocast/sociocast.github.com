@@ -75,6 +75,11 @@ Each API request must be attach a valid signature parameter, the <code>sig</code
 </ul>
 
 In order to generate a valid signature, a <code>String</code> is generated which is composed of these keys and their corresponding values in dictionary order (ie. alphabetical). This String includes the <code>secret</code>. Please note that once the signature is computed, the <code>secret</code> is not sent as a parameter. The generate String is sent as the <code>sig</code> parameter for the request, as shown below. Also, only a +/-5 minute wiggle period is permitted on the Sociocast server on either side of the current <code>timestamp</code> to allow for reasonable clock drift and other delays.
+</p>
+
+<h4>Generating a <code>sig</code> Parameter Example</h4>
+<p>
+
 
 </p>
 
