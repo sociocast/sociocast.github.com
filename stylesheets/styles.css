@@ -36,10 +36,9 @@
     font-style: normal;
 }
 
-
 body {
   padding:50px;
-  font:14px/1.5 Lato, "ProximaNovaRgRegular", Helvetica, Arial, sans-serif;
+  font:14px/1.5 "ProximaNovaRgRegular", Lato, Helvetica, Arial, sans-serif;
   color:#777;
   font-weight:300;
 }
