@@ -293,7 +293,47 @@ An example entity observation JSON Object may be:
 
 
 <h4><code>POST /entity/attributes</code></h4>
-<p>The <code>POST /entity/attributes</code> REST API call allows you to set, add, and delete attributes for a specific entity.<br/><br/><a href="#">Read Documenation&nbsp;&raquo;</a></p>
+<p>The <code>POST /entity/attributes</code> REST API call allows you to set, add, and delete attributes for a specific <code>eid</code>. The call accepts a JSON Object with the following required strings:</p>
+
+<p>
+<table>
+	<tr>
+		<th>String</th>
+		<th>Value</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><code>eid</code></td>
+		<td>String</td>
+		<td>The entity ID for the entity.</td>
+	</tr>
+	<tr>
+		<td><code>eid.{secondary}</code></td>
+		<td>String</td>
+		<td>Any secondary entity ID for the entity. For instance, "<code>'eid.appnexux':'362946cd63956394a'</code>".</td>
+	</tr>	
+	<tr>
+		<td><code>clid</code></td>
+		<td>String</td>
+		<td>Your client ID as provided to you by Sociocast. You can also grab this from the <a href="https://console.sociocast.com">Sociocast Console.</a></td>
+	</tr>	
+	<tr>
+		<td><code>set</code></td>
+		<td>JSON Object</td>
+		<td>A JSON Object with the <code>string : value</code>s of the attributes you would like to set for the <code>eid</code>. The existing string values will be replaced.</td>
+	</tr>	
+	<tr>
+		<td><code>add</code></td>
+		<td>JSON Object</td>
+		<td>A JSON Object with the <code>string : value</code>s of the attributes you would like to add for the <code>eid</code>. values will be appended to the existing string within the Sociocast platform.</td>
+	</tr>	
+	<tr>
+		<td><code>del</code></td>
+		<td>JSON Object</td>
+		<td>A JSON Object with the <code>string : value</code>s you would like to delete for the <code>eid</code>.</td>
+	</tr>		
+</table>
+</p>
 
 <h4><code>GET /entity/profile</code></h4>
 <p>The <code>GET /entity/profile</code> REST API call allows you to retrieve a profile for an entity.<br/><br/><a href="#">Read Documenation&nbsp;&raquo;</a></p>
