@@ -169,10 +169,35 @@ As mentioned above, the <code>obs</code> string takes a JSON Object as a value. 
 		<th>Description</th>
 	</tr>
 	<tr>
-		<td><code>eid</code></td>
+		<td><code>url</code></td>
 		<td>String</td>
-		<td>The entity ID for the entity.</td>
+		<td>The URL of the entity observation, if available. Sociocast automatically crawls and classifies all URLs. Once crawled and classified, the classifications will be available in the entity profile via the <code>cls.ctx</code> JSON Object string.</td>
 	</tr>
+	<tr>
+		<td><code>txt</code></td>
+		<td>String</td>
+		<td>Any body of textual data associated with the entity observation. Sociocast will automatically classify textual data. Once classified, the classifications will be available in the entity profile via the <code>cls.ctx</code> JSON Object string.</td>
+	</tr>	
+	<tr>
+		<td><code>revenue</code></td>
+		<td>Double</td>
+		<td>Revenue associated with the entity observation (i.e. for example an entity purchase an item that costs <code>99.25</code> dollars).</td>
+	</tr>
+	<tr>
+		<td><code>url.ua</code></td>
+		<td>String</td>
+		<td>The User Agent of the HTTP Referrer if available.</td>
+	</tr>	
+	<tr>
+		<td><code>clusid</code></td>
+		<td>JSON Array</td>
+		<td>The list of Cluster IDs into which the entity observation should be placed. For more info, see Clusters.</td>
+	</tr>
+	<tr>
+		<td><code>geo</code></td>
+		<td>JSON Array [2]</td>
+		<td>The longitude and latitude of the entity observation, if available (i.e. "<code>[51.519682,-109.599609]</code>")</td>
+	</tr>			
 </table>
 
 </p>
