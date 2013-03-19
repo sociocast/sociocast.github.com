@@ -31,13 +31,13 @@
         <br/>
 		<a href="#rest">Jump to REST API Methods&nbsp;&raquo;</a>
         <br/><br/>
-		<a href="#rest">Jump to POST /entity/observe&nbsp;&raquo;</a>
+		<a href="#entity_observe">Jump to POST /entity/observe&nbsp;&raquo;</a>
 		<br/>
-		<a href="#rest">Jump to POST /entity/attributes&nbsp;&raquo;</a>
+		<a href="#entity_attributes">Jump to POST /entity/attributes&nbsp;&raquo;</a>
 		<br/>
-		<a href="#rest">Jump to GET /entity/profile&nbsp;&raquo;</a>
+		<a href="#entity_profile">Jump to GET /entity/profile&nbsp;&raquo;</a>
 		<br/>
-		<a href="#rest">Jump to GET /content/profile&nbsp;&raquo;</a>		
+		<a href="#content_profile">Jump to GET /content/profile&nbsp;&raquo;</a>		
         </p>
 		<h4>Sociocast Libraries & SDKs</h4>
 		<a href="http://sociocast.github.com/sociocast-js/" target="_blank">Sociocast JS Library&nbsp;&raquo;</a>
@@ -123,7 +123,7 @@ $ git checkout gh-pages
 </code></pre>
 -->
 
-<h4><code>POST /entity/observe</code></h4>
+<a name="entity_observe"><h4><code>POST /entity/observe</code></h4></a>
 <p>
 The <code>POST /entity/observe</code> REST API call sends an observation for a specific <code>eid</code>. The call accepts a JSON Object with the following required strings:
 
@@ -292,7 +292,7 @@ An example entity observation JSON Object may be:
 }</code></pre>
 
 
-<h4><code>POST /entity/attributes</code></h4>
+<a name="entity_attributes"><h4><code>POST /entity/attributes</code></h4></a>
 <p>The <code>POST /entity/attributes</code> REST API call allows you to set, add, and delete attributes for a specific <code>eid</code>. The call accepts a JSON Object with the following required strings:</p>
 
 <p>
@@ -347,7 +347,7 @@ An example entity attributes JSON Object may be:
 }</code></pre>
 
 
-<h4><code>POST /entity/profile</code></h4>
+<a name="entity_profile"><h4><code>POST /entity/profile</code></h4></a>
 <p>The POST <code>/entity/profile</code> REST API call allows you to retrieve a profile for an entity. The call accepts a JSON Object with the following required strings:</p>
 
 <p>
@@ -401,7 +401,7 @@ The JSON response returns a JSON Object with the <code>eid</code> and <code>attr
 
 
 
-<h4><code>GET /content/profile</code></h4>
+<a name="content_profile"><h4><code>GET /content/profile</code></h4><a>
 <p>The <cod	{e>GET /content/profile</code> REST API call allows you to retrieve a profile for a content pobject. The API call requires the following URL paramters:</p>
 
 <p>
