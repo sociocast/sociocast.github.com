@@ -93,6 +93,11 @@ a {
   text-decoration:none;
 }
 
+a:hover {
+  color:#0084b6;
+  text-decoration:none;
+}
+
 a small {
   font-size:11px;
   color:#777;
