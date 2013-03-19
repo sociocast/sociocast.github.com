@@ -388,6 +388,19 @@ An example entity profile JSON Object may be:
 	"attributes":["cls.ctx", "hhi", "eid.appnexusId", "bluekai_segments"]
 }</code></pre>
 
+The JSON response returns a JSON Object with the <code>eid</code> and <code>attributes</code> strings. Depending on whether the attribute is a statespace string or a regular string, you will get back a JSON Array or JSON Object for the particular attribute string. For instance, the HTTP JSON response for the above entity profile request might look like this:
+<pre><code>{
+	"eid":"462856674",
+	"attributes":{
+		"cls.ctx":{"Music":0.987,"Fashion":0.654},
+		"hhi":["$84,000+"], 
+		"eid.appnexusId":"2795629cb47294758438b",
+		"bluekai_segments":{"Auto Intender":1,"Travel Intender",1}
+	}
+}</code></pre>
+
+
+
 <h4><code>GET /content/profile</code></h4>
 <p>The <cod	{e>GET /content/profile</code> REST API call allows you to retrieve a profile for a content pobject.<br/><br/><a href="#">Read Documenation&nbsp;&raquo;</a></p>
 
