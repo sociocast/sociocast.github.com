@@ -158,7 +158,7 @@ The <code>POST /entity/observe</code> REST API call sends an observation for a s
 </p>
 
 <p>
-As mentioned above, the <code>obs</code> string takes a JSON Object as a value. The following table lists the reserved strings for the <code>obs</code> JSON Object. 
+As mentioned above, the <code>obs</code> string takes a JSON Object as a value. The following table lists the reserved strings for the <code>obs</code> JSON Object which provide Sociocast clients with additional features and functionality. 
 </p>
 
 <p>
@@ -195,12 +195,51 @@ As mentioned above, the <code>obs</code> string takes a JSON Object as a value. 
 	</tr>
 	<tr>
 		<td><code>geo</code></td>
-		<td>JSON Array [2]</td>
-		<td>The longitude and latitude of the entity observation, if available (i.e. "<code>[51.519682,-109.599609]</code>")</td>
+		<td>JSON Array</td>
+		<td>The longitude and latitude of the entity observation, if available (i.e. "<code>[51.519682,-109.599609]</code>"). The JSON Array should be of length <code>2</code>.</td>
 	</tr>			
 </table>
-
 </p>
+
+<p>
+In addition to the strings in the table above, the following strings in the table below are reserved keys and should not be used in entity observations, within the <code>obs</code> JSON Object.
+</p>
+
+<p>
+<table>
+	<tr>
+		<th>String</th>
+	</tr>
+	<tr>
+		<td><code>cls.ctx</code></td>
+	</tr>
+	<tr>
+		<td><code>cls.atm</code></td>
+	</tr>
+	<tr>
+		<td><code>wgt</code></td>
+	</tr>
+	<tr>
+		<td><code>url.ua</code></td>
+	</tr>
+	<tr>
+		<td><code>srchtrms</code></td>
+	</tr>	
+	<tr>
+		<td><code>sessid</code></td>
+	</tr>	
+	<tr>
+		<td><code>utm_*</code></td>
+	</tr>	
+	<tr>
+		<td><code>src</code></td>
+	</tr>	
+	<tr>
+		<td><code>ref</code></td>
+	</tr>				
+</table>
+</p>
+
 
 <h4><code>POST /entity/attributes</code></h4>
 <p>The <code>POST /entity/attributes</code> REST API call allows you to set, add, and delete attributes for a specific entity.<br/><br/><a href="#">Read Documenation&nbsp;&raquo;</a></p>
