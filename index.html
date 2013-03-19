@@ -121,7 +121,7 @@ $ git checkout gh-pages
 
 <h4><code>POST /entity/observe</code></h4>
 <p>
-The <code>POST /entity/observe</code> REST API call sends an observation for a specific <code>eid</code>. The call accepts a JSON Object with the following required strings. 
+The <code>POST /entity/observe</code> REST API call sends an observation for a specific <code>eid</code>. The call accepts a JSON Object with the following required strings:
 
 <table>
 	<tr>
@@ -138,6 +138,16 @@ The <code>POST /entity/observe</code> REST API call sends an observation for a s
 		<td><code>clid</code></td>
 		<td>String</td>
 		<td>Your client ID as provided to you by Sociocast. You can also grab this from the <a href="https://console.sociocast.com">Sociocast Console.</a></td>
+	</tr>	
+	<tr>
+		<td><code>ets</code></td>
+		<td>Long</td>
+		<td>The timestamp when the event took place in Unix Epoch time.</td>
+	</tr>	
+	<tr>
+		<td><code>evt</code></td>
+		<td>String</td>
+		<td>The event type. This can be any arbitrary string (i.e. "view", "search", "click", etc). </td>
 	</tr>				
 </table>
 </p>
