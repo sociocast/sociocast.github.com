@@ -156,6 +156,8 @@ dt {
 
 th {
   color:#444;
+  font-weight: none;
+  font:12px "ProximaNovaSemibold", Lato, Helvetica, Arial, sans-serif;	
 }
 
 img {
