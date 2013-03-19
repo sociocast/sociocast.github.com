@@ -206,7 +206,31 @@ As mentioned above, the <code>obs</code> string takes a JSON Object as a value. 
 </p>
 
 <p>
+In addition to the strings in the table above, you will also need to include statespace keys. Please read the Statespaces overview for how these strings work. In summary, Statespace keys determine the "features" of your predictions. The following table explains the usage of Statespace keys. 
+</p>
+
+<p>
 In addition to the strings in the table above, the following strings in the table below are reserved keys and should not be used in entity observations, within the <code>obs</code> JSON Object.
+</p>
+
+<p>
+<table>
+	<tr>
+		<th>String</th>
+		<th>Value</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><code>{statespace}.id</code></td>
+		<td>String</td>
+		<td>The unique identifier for the key (for instance, "product.id", "game.id", or "publisher.id"). The value for this string should be the uniquely identifiable ID for the string value (for instance, "'product.id':'12345'").</td>
+	</tr>	
+	<tr>
+		<td><code>{statespace}.name</code></td>
+		<td>String</td>
+		<td>The human-readable name for the key (for instance, "'product.name':'Sony Walkman'"). Additionally, {statespace}.name can accept a Taxonomy (please read Taxonomy overview for how Taxonomies work). For instance, "'product.name':'Music.Players.Sony Walkman'").</td>
+	</tr>	
+</table>
 </p>
 
 <p>
