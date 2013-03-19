@@ -402,8 +402,39 @@ The JSON response returns a JSON Object with the <code>eid</code> and <code>attr
 
 
 <h4><code>GET /content/profile</code></h4>
-<p>The <cod	{e>GET /content/profile</code> REST API call allows you to retrieve a profile for a content pobject.<br/><br/><a href="#">Read Documenation&nbsp;&raquo;</a></p>
+<p>The <cod	{e>GET /content/profile</code> REST API call allows you to retrieve a profile for a content pobject. The API call requires the following URL paramters:</p>
 
+<p>
+<table>
+	<tr>
+		<th>Parameter</th>
+		<th>Value</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><code>url</code></td>
+		<td>String</td>
+		<td>The URL you would like to classify.</td>
+	</tr>
+	<tr>
+		<td><code>humread</code></td>
+		<td>Boolean</td>
+		<td>Whether to retrieve human-readable values for the <code>cls.ctx</code> string (i.e. the Taxonomy). If you send <code>true</code> you will receive human-readable values.</td>
+	</tr>	
+</table>
+</p>
+
+<p>
+Please note that if the URL is not in Sociocast's client-wide page cache, Sociocast will add the URL to the crawling queue at the first GET call. You will be able to retrieve the URL classifications in under 2 minutes. If the URL already exists in the page cache, you will be able to retrive the content profile instantly. 
+</p>
+<p>
+The JSON response for the content profile call will look like the below. The <code>cls.ctx</code> string contains the classifications (in either human-readable form or by ID) and the double value represents the confidence score for the classification. For instance, <code>"Music":0.9856</code> represents a confidence score of 98.56% for the <code>Music</code> category. For more information on the categorizations, plesase see the Taxonomy section. 
+</p>
+
+<pre><code>{
+ 	"url":"http://www.cnn.com/2012/06/26/tech/social-media/facebook-uproar/index.html?hpt=hp_c1"
+	"cls.ctx":{"Music":0.9856, "Fashion":0.85}
+}</code></pre>
 
 <h3>Support or Contact</h3>
 
