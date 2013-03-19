@@ -325,6 +325,7 @@ footer {
 
 /* button basics */
 a.minibutton {
+	font-family: "Open Sans",Arial,sans-serif;
 	display:inline-block;
 	height:23px;
 	padding:0 0 0 3px;
