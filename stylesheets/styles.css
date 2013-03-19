@@ -325,7 +325,8 @@ footer {
 
 .button_row {
 	width:100%;
-	margin:15px;
+	margin-top:20px;
+	margin-bottom:20px;	
 	text-align:center;
 }
 
