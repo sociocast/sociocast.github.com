@@ -209,33 +209,43 @@ In addition to the strings in the table above, the following strings in the tabl
 <table>
 	<tr>
 		<th>String</th>
+		<th>Description</th>
 	</tr>
 	<tr>
 		<td><code>cls.ctx</code></td>
+		<td>Used internally to hold URL and textual classifications.</td>		
 	</tr>
 	<tr>
 		<td><code>cls.atm</code></td>
+		<td>Used internally to hold classification atoms (i.e. rule-based named entities for the Sociocast classifier).</td>
 	</tr>
 	<tr>
 		<td><code>wgt</code></td>
-	</tr>
-	<tr>
-		<td><code>url.ua</code></td>
+		<td>Used internally to hold the edge weight between two entities.</td>
 	</tr>
 	<tr>
 		<td><code>srchtrms</code></td>
+		<td>Used internally to hold search terms that are retrieved from the Google referrer URL.</td>
 	</tr>	
 	<tr>
 		<td><code>sessid</code></td>
+		<td>Used internally to mark the entity's session ID for the sequence of entity observations in a particular session.</td>
 	</tr>	
 	<tr>
 		<td><code>utm_*</code></td>
+		<td>The prefix <code>utm</code> is used internally to hold Google UTM keywords which are extracted from referrer URLs.</td>
 	</tr>	
 	<tr>
 		<td><code>src</code></td>
+		<td>Used internally to hold the sources (i.e. source entities in the entity graph) for a particular entity.</td>	
+	</tr>	
+	<tr>
+		<td><code>snk</code></td>
+		<td>Used internally to hold the sink (i.e. sink entities in the entity graph) for a particular entity.</td>	
 	</tr>	
 	<tr>
 		<td><code>ref</code></td>
+		<td>Used internally to hold the referrer URL from the HTTP header, if available.</td>
 	</tr>				
 </table>
 </p>
