@@ -148,7 +148,12 @@ The <code>POST /entity/observe</code> REST API call sends an observation for a s
 		<td><code>evt</code></td>
 		<td>String</td>
 		<td>The event type. This can be any arbitrary string (i.e. "view", "search", "click", etc). </td>
-	</tr>				
+	</tr>
+	<tr>
+		<td><code>obs</code></td>
+		<td>JSON Object</td>
+		<td>The entity observation, composed of <code>string</code> : <code>value</code> pairs. The value can also be of type JSON Array (i.e. multivalued). The entity observation is "what" is being observed for the entity.</td>
+	</tr>					
 </table>
 </p>
 
