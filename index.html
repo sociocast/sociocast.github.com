@@ -347,9 +347,46 @@ An example entity attributes JSON Object may be:
 }</code></pre>
 
 
-<h4><code>GET /entity/profile</code></h4>
-<p>The GET <code>/entity/profile</code> REST API call allows you to retrieve a profile for an entity.</p>
+<h4><code>POST /entity/profile</code></h4>
+<p>The POST <code>/entity/profile</code> REST API call allows you to retrieve a profile for an entity. The call accepts a JSON Object with the following required strings:</p>
 
+<p>
+<table>
+	<tr>
+		<th>String</th>
+		<th>Value</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><code>eid</code></td>
+		<td>String</td>
+		<td>The entity ID for the entity.</td>
+	</tr>
+	<tr>
+		<td><code>clid</code></td>
+		<td>String</td>
+		<td>Your client ID as provided to you by Sociocast. You can also grab this from the <a href="https://console.sociocast.com">Sociocast Console.</a></td>
+	</tr>	
+	<tr>
+		<td><code>attributes</code></td>
+		<td>JSON Array</td>
+		<td>The attributes you would like to retrieve for the <code>eid</code>.</td>
+	</tr>
+	<tr>
+		<td><code>humread</code></td>
+		<td>Boolean</td>
+		<td>Whether to retrieve human-readable values for the <code>cls.ctx</code> string (i.e. the Taxonomy). If you send <code>true</code> you will receive human-readable values.</td>
+	</tr>		
+</table>
+</p>
+
+An example entity profile JSON Object may be:
+<pre><code>{
+	"eid":"462856674",
+	"clid":"C89",
+	"humread":true,	
+	"attributes":["cls.ctx", "hhi", "eid.appnexusId", "bluekai_segments"]
+}</code></pre>
 
 <h4><code>GET /content/profile</code></h4>
 <p>The <cod	{e>GET /content/profile</code> REST API call allows you to retrieve a profile for a content pobject.<br/><br/><a href="#">Read Documenation&nbsp;&raquo;</a></p>
