@@ -323,6 +323,11 @@ footer {
   }
 }
 
+.button_row {
+	width:100%;
+	margin:15px;
+}
+
 /* ------------------------------------------
  * CSS3 GITHUB BUTTONS (Nicolas Gallagher)
  * Licensed under Unlicense
