@@ -66,11 +66,72 @@
         <h3>Purpose</h3>
 
 <p>
-	The Sociocast Beacon API is primarily used for entity observations via ad impressions and/or email campaigns. It is useful when you do not have access to JavaScript or other any other server-side languages. The Sociocast Beacon API is an invisible 1×1 pixel <code>image</code> that clients can easily embed in emails or display advertising campaigns. The HTTP Request for the image registers an <code>/entity/observation</code> call in Sociocast's platform.
+The Sociocast Beacon API is primarily used for entity observations via ad impressions and/or email campaigns. It is useful when you do not have access to JavaScript or other any other server-side languages. The Sociocast Beacon API is an invisible 1×1 pixel <code>image</code> that clients can easily embed in emails or display advertising campaigns. The HTTP Request for the image registers an <code>/entity/observation</code> call in Sociocast's platform. The URL for the image pixel is:
+
+<pre><code>http://pdata.scastnet.com/pdata.gif</code></pre>
+
+For HTTPS, you can use:
+
+<pre><code>https://pdata.scastnet.com/pdata.gif</code></pre>
+
+For example, this is how you would load an <code>img</code> tag:
+
+<pre><code><img src="http://pdata.scastnet.com/pdata.gif?cid=CLIENT_ID&uuid=UUID&clusid=CLUSTERID1&sc_type=click" height="0px" width="0px"/>
+</code></pre>
 
 </p>
 
+<p>
+The following URL parameters are acceptable:
+<table>
+	<tr>
+		<th>String</th>
+		<th>Value</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><code>eid</code></td>
+		<td>String</td>
+		<td>The entity ID for the entity.</td>
+	</tr>
+	<tr>
+		<td><code>clid</code></td>
+		<td>String</td>
+		<td>Your client ID as provided to you by Sociocast. You can also grab this from the <a href="https://console.sociocast.com">Sociocast Console.</a></td>
+	</tr>	
+	<tr>
+		<td><code>url</code></td>
+		<td>String</td>
+		<td>The URL for the event observation.</td>
+	</tr>	
+	<tr>
+		<td><code>clusid</code></td>
+		<td>Integer</td>
+		<td>One or more <code>clusid</code>s to add to the event observation.</td>
+	</tr>				
+</table>	
+Additionally, you can pass in any <code>key=value</code> pair as you would in a general entity observation call. 
+</p>
 
+For ad impression tracking, the request might look like this:
+
+<pre><code>http://pdata.scastnet.com/pdata.gif?cid=CLIENT_ID&uuid=UUID&url=URL&campaignId=CAMPAIGN_ID&sc_type=view
+</code></pre>
+
+For ad click tracking, the request might look like this:
+
+<pre><code>http://pdata.scastnet.com/pdata.gif?cid=CLIENT_ID&uuid=UUID&url=URL&campaignId=CAMPAIGN_ID&sc_type=click
+</code></pre>
+
+For conversion tracking, the request might look like this:
+
+<pre><code>http://pdata.scastnet.com/pdata.gif?cid=CLIENT_ID&uuid=UUID&clusid=>CLUSTERID1&clusid=CLUSTERID2&sc_type=click
+</code></pre>
+
+For email tracking, the request might look like this:
+
+<pre><code><img src="http://pdata.scastnet.com/pdata.gif?cid=CLIENT_ID&uuid=UUID&eid.secondary='john%40smith.com'&clusid=CLUSTERID1&sc_type=click" height="0px" width="0px"/>
+</code></pre>
 
 
       </section>
