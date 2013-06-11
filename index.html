@@ -81,7 +81,7 @@
 <p>
 To get access to the Sociocast REST API, you will need get a Sociocast account. To do so, please visit the Pricing on sociocast.com. To use the API you will need (a) your <code>clid</code> (client ID), your <code>apikey</code> (API key), and (c) your <code>secret</code> (API secret). These were provided to you when you signed up for Sociocast. They are also available via the <a href="https://console.sociocast.com" target="_blank">Sociocast Console</a>. 
 
-To access the API in Sanbox, use the following URL:
+To access the API in Sandbox, use the following URL:
 <pre><code>http://api-sandbox.sociocast.com/[API_VERSION]/
 </code></pre>
 
@@ -95,25 +95,25 @@ The current <code>[API_VERSION]</code> is <code>1.0</code>.
 
 <h4>Current Timestamp, API Key and Signature</h4>
 <p>
-For security reasons, the Sociocast REST API requires that calls to the service be signed (i.e. be sent a signature as part of the request query string). The signature requires the current <code>timestamp</code>, your <code>apikey</code>, and your <code>secret</code>. The value of the <code>apikey</code> is an alphanumeric string assigned to you when you created your Sociocast account. Additionally you were also given an <code>secret</code>, which is a secure alphanumeric string and will be used to calculate the signature.
+For security reasons, the Sociocast REST API requires that calls to the service be signed (i.e. be sent a signature as part of the request query string). The signature requires the current timestamp (<code>ts</code>), your API key (<code>apikey</code>), and your <code>secret</code>. The value of the <code>apikey</code> is an alphanumeric string assigned to you when you created your Sociocast account. Additionally you were also given a <code>secret</code>, which is a secure alphanumeric string and will be used to calculate the signature.
 </p>
 
 <h4>Signing API Requests</h4>
 <p>
-Each API request must be attach a valid signature parameter, the <code>sig</code> parameter, in the query string of the request. The <code>sig</code> value is calculated by generating a <code>SHA256 Digest</code> made up of:
+Each API request must be attach a valid signature, the <code>sig</code> parameter, in the query string of the request. The <code>sig</code> value is calculated by generating a <code>SHA-256</code> digest from:
 <ul>
 	<li>The <code>apikey</code></li>
 	<li>The <code>secret</code></li>
-	<li>The current <code>timestamp</code>, reflecting the number of seconds since Unix Epoch Time (i.e. <code>January 1 1970 00:00:00 GMT</code>), at which the request is made</li>
+	<li>The current timestamp (<code>ts</code>), reflecting the number of seconds since Unix Epoch Time (i.e. <code>January 1 1970 00:00:00 GMT</code>), at which the request is made</li>
 </ul>
 
-In order to generate a valid signature, a <code>String</code> is generated which is composed of these keys and their corresponding values in dictionary order (ie. alphabetical). This String includes the <code>secret</code>. Please note that once the signature is computed, the <code>secret</code> is not sent as a parameter. The generate String is sent as the <code>sig</code> parameter for the request, as shown below. Also, only a +/-5 minute wiggle period is permitted on the Sociocast server on either side of the current <code>timestamp</code> to allow for reasonable clock drift and other delays.
+In order to generate a valid signature, a <code>String</code> is generated which is composed of these keys and their corresponding values in dictionary order (ie. alphabetical). This String includes the <code>secret</code>. Please note that once the signature is computed, the <code>secret</code> is not sent as a parameter. The generated String is sent as the <code>sig</code> parameter for the request, as shown below. Also, only a +/-5 minute wiggle period is permitted on the Sociocast server on either side of the current timestamp (<code>ts</code>) to allow for reasonable clock drift and other delays.
 </p>
 
 <h4>Generating the Signature Parameter by Example</h4>
 <p>
 The following is an example of a <code>GET /content/profile</code> API request using a timestamp of <code>1200603038</code> (<code>Thu, 17 Jan 2008 20:50:38 +0000</code>), an <code>apikey</code> of <code>2fvmer3qbk7f9jnq</code> and a <code>secret</code> of <code>qvxkmw57pec7</code>:
-<pre><code>http://api.sociocast.com/[API_VERSION]/content/profile?url=http://techcrunch.com/&apikey='2fvmer3qbk7f9jnqneg58bu2'&sig='6951a4655b27fd657160681b59f5218ff3e47857e4d4ff3310bf24dca0379972'&ts='1200603038
+<pre><code>http://api.sociocast.com/[API_VERSION]/content/profile?url=http://techcrunch.com/&apikey=2fvmer3qbk7f9jnqneg58bu2&sig=6951a4655b27fd657160681b59f5218ff3e47857e4d4ff3310bf24dca0379972&ts=1200603038
 </code></pre>
 
 For example, the following PHP code generates a <code>SHA 256</code> signature in PHP:
