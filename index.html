@@ -57,7 +57,7 @@
 		</div>
 		
 		<div class="button_row">
-			<a href="http://www.sociocast.com/our-solution/#pricing" class="button icon key">Register for API Access</a>
+			<a href="http://www.sociocast.com/" class="button icon key">Register for API Access</a>
 		</div>				
 		
 		<!--
@@ -83,7 +83,7 @@
 
 <p>To access the Sociocast REST API you will need your API key and secret (<code>apikey</code> and <code>apisecret</code>). These were provided to you when you signed up for Sociocast and are also available via the <a href="https://console.sociocast.com" target="_blank">Sociocast Console</a>. For <code>entity</code> calls you will also need your client ID (<code>clid</code>), although this is not used for API authentication.</p>
 
-<p>If you do not have a Sociocast account, please <a href="http://www.sociocast.com/pricing/">sign up</a> on our website.</p>
+<p>If you do not have a Sociocast account, please <a href="http://www.sociocast.com">sign up</a> on our website.</p>
 
 <h4>Sandbox</h4>
 
@@ -476,7 +476,7 @@ The JSON response returns a JSON Object with the <code>eid</code> and <code>attr
 
 
 <a name="content_profile"><h4><code>GET /content/profile</code></h4></a>
-<p>The <code>GET /content/profile</code> REST API call allows you to retrieve the classification of a URL's content. The profile may contain one or more categories within the <a href="http://www.sociocast.com/dev-center/taxonomy/sociocast-taxonomy/">Sociocast Taxonomy</a>, along with a confidence score for that category.</p>
+<p>The <code>GET /content/profile</code> REST API call allows you to retrieve the classification of a URL's content. The profile may contain one or more categories within the <a href="http://corp.sociocast.com/dev-center/taxonomy/sociocast-taxonomy/">Sociocast Taxonomy</a>, along with a confidence score for that category.</p>
 <p>Every classification category has both an ID and a human-readable name (both strings). Either can be retrieved with this call, however the IDs are the default; IDs are generally much shorter and therefore more efficient to use.</p>
 <p>Typically this call is unnecessary if using entity profiles, as content classifications are also processed for URLs in entity observe calls. However, it is fine to use both if business needs require separate calls.</p>
 <p>The API call requires the following URL parameters:</p>
@@ -520,7 +520,7 @@ The JSON response returns a JSON Object with the <code>eid</code> and <code>attr
 	<tr>
 		<td><code>classification</code></td>
 		<td>Object</td>
-		<td>The <a href="http://www.sociocast.com/dev-center/taxonomy/sociocast-taxonomy/">Sociocast Taxonomy</a> categories (in either human-readable form or by ID) mapped to a number between 0 and 1 which represents the confidence score of the classification. This may be empty. <br/> For example, <code>{"Music":0.9856}</code> represents a confidence score of 98.56% for the <code>Music</code> category.</td>
+		<td>The <a href="http://corp.sociocast.com/dev-center/taxonomy/sociocast-taxonomy/">Sociocast Taxonomy</a> categories (in either human-readable form or by ID) mapped to a number between 0 and 1 which represents the confidence score of the classification. This may be empty. <br/> For example, <code>{"Music":0.9856}</code> represents a confidence score of 98.56% for the <code>Music</code> category.</td>
 	</tr>	
 </table>
 </p>
